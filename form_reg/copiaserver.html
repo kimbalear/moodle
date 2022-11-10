@@ -1,0 +1,21 @@
+<form class="mt-3" action="https://moodle-39.psi-mis.org/login/index.php" method="post" id="login">
+    <input id="anchor" type="hidden" name="anchor" value="">
+    <script>document.getElementById('anchor').value = location.hash;</script>
+    <input type="hidden" name="logintoken" value="8g75rV3YwMiF34xdjDicBIaVJI7GLaKG">
+    <div class="form-group">
+        <label for="username" class="sr-only">
+                Username
+        </label>
+        <input type="text" name="username" id="username" class="form-control" value="" placeholder="Username" autocomplete="username">
+    </div>
+    <div class="form-group">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" value="" class="form-control" placeholder="Password" autocomplete="current-password">
+    </div>
+        <div class="rememberpass mt-3">
+            <input type="checkbox" name="rememberusername" id="rememberusername" value="1">
+            <label for="rememberusername">Remember username</label>
+        </div>
+
+    <button type="submit" class="btn btn-primary btn-block mt-3" id="loginbtn">Log in</button>
+</form>
