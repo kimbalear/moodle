@@ -5,65 +5,121 @@
 }
 
 body {
-    background-color: #FFF;
-}
+    background-image: url(images/bk-login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 
-.form-register {
-    width: 400px;
-    background: #FFF;
-    padding: 30px;
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 4px;
-    font-family: 'calibri';
-    color: #333;
-    box-shadow: 7px 13px 42px #333;
+    .int {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr auto;
+        grid-auto-columns: 1fr;
+        gap: 8px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "gr_top"
+            "gr_content"
+            "gr_foot";
 
-    h4 {
-        font-size: 22px;
-        margin-bottom: 20px;
-    }
+        .gr_top {
+            grid-area: gr_top;
+            padding: 8px 16px;
 
-    p {
-        height: 40px;
-        text-align: center;
-        font-size: 18px;
-        line-height: 40px;
-    }
+            .logo {
+                width: 100px;
+                height: auto;
+            }
+        }
 
-    a {
-        color: #333;
-        text-decoration: none;
+        .gr_content {
+            grid-area: gr_content;
+            justify-self: end;
+            padding-right: 100px;
 
-        &:hover {
-            color: #1f53c5;
-            text-decoration: none;
+            .form-register,
+            .create-account {
+                width: 100%;
+                max-width: 400px;
+                background: #FFF;
+                padding: 30px;
+                border-radius: 4px;
+                font-family: 'calibri';
+                color: #333;
+                box-shadow: 7px 13px 42px #333;
+
+                h4 {
+                    font-size: 22px;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    height: 40px;
+                    text-align: center;
+                    font-size: .9em;
+                    line-height: 1em;
+                }
+
+                a {
+                    color: #333;
+                    text-decoration: none;
+                    font-size: .9em;
+                    line-height:1em;
+
+                    &:hover {
+                        color: #1f53c5;
+                        text-decoration: none;
+                    }
+                }
+
+                .controls {
+                    width: 100%;
+                    background: #FFF;
+                    padding: 10px;
+                    border-radius: 4px;
+                    margin-bottom: 16px;
+                    border: 1px solid gray;
+                    font-family: 'calibri';
+                    font-size: 18px;
+                    color: #333;
+                }
+
+                .botons {
+                    width: 100%;
+                    background: #1f53c5;
+                    border: none;
+                    padding: 12px;
+                    color: white;
+                    margin: 16px 0;
+                    font-size: 16px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .create-account {
+                margin-top: 5vh;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .gr_content{
+                //padding-right: 0;
+                padding: 0 16px;
+                justify-self: center;
+            }
+        }
+
+        .gr_foot {
+            grid-area: gr_foot;
         }
     }
-
-    .botons {
-        width: 100%;
-        background: #1f53c5;
-        border: none;
-        padding: 12px;
-        color: white;
-        margin: 16px 0;
-        font-size: 16px;
-
-        &:hover{
-            cursor: pointer;
-        }
-    }
 }
 
-.controls {
-    width: 100%;
-    background: #FFF;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    border: 1px solid gray;
-    font-family: 'calibri';
-    font-size: 18px;
-    color: white;
+@media only screen and (max-width: 900px) {
+    body {
+        background-image: none;
+        background-color: #F0B23A;
+    }
 }

@@ -5,52 +5,69 @@
 }
 
 body {
-  background-color: #FFF;
+  background-image: url(images/bk-login.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-.form-register {
-  width: 400px;
+body .int {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr auto;
+  grid-auto-columns: 1fr;
+  gap: 8px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "gr_top" "gr_content" "gr_foot";
+}
+body .int .gr_top {
+  grid-area: gr_top;
+  padding: 8px 16px;
+}
+body .int .gr_top .logo {
+  width: 100px;
+  height: auto;
+}
+body .int .gr_content {
+  grid-area: gr_content;
+  justify-self: end;
+  padding-right: 100px;
+}
+body .int .gr_content .form-register,
+body .int .gr_content .create-account {
+  width: 100%;
+  max-width: 400px;
   background: #FFF;
   padding: 30px;
-  margin: auto;
-  margin-top: 100px;
   border-radius: 4px;
   font-family: "calibri";
   color: #333;
   box-shadow: 7px 13px 42px #333;
 }
-.form-register h4 {
+body .int .gr_content .form-register h4,
+body .int .gr_content .create-account h4 {
   font-size: 22px;
   margin-bottom: 20px;
 }
-.form-register p {
+body .int .gr_content .form-register p,
+body .int .gr_content .create-account p {
   height: 40px;
   text-align: center;
-  font-size: 18px;
-  line-height: 40px;
+  font-size: 0.9em;
+  line-height: 1em;
 }
-.form-register a {
+body .int .gr_content .form-register a,
+body .int .gr_content .create-account a {
   color: #333;
   text-decoration: none;
+  font-size: 0.9em;
+  line-height: 1em;
 }
-.form-register a:hover {
+body .int .gr_content .form-register a:hover,
+body .int .gr_content .create-account a:hover {
   color: #1f53c5;
   text-decoration: none;
 }
-.form-register .botons {
-  width: 100%;
-  background: #1f53c5;
-  border: none;
-  padding: 12px;
-  color: white;
-  margin: 16px 0;
-  font-size: 16px;
-}
-.form-register .botons:hover {
-  cursor: pointer;
-}
-
-.controls {
+body .int .gr_content .form-register .controls,
+body .int .gr_content .create-account .controls {
   width: 100%;
   background: #FFF;
   padding: 10px;
@@ -59,7 +76,40 @@ body {
   border: 1px solid gray;
   font-family: "calibri";
   font-size: 18px;
+  color: #333;
+}
+body .int .gr_content .form-register .botons,
+body .int .gr_content .create-account .botons {
+  width: 100%;
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
   color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
+body .int .gr_content .form-register .botons:hover,
+body .int .gr_content .create-account .botons:hover {
+  cursor: pointer;
+}
+body .int .gr_content .create-account {
+  margin-top: 5vh;
+}
+@media only screen and (max-width: 600px) {
+  body .int .gr_content {
+    padding: 0 16px;
+    justify-self: center;
+  }
+}
+body .int .gr_foot {
+  grid-area: gr_foot;
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    background-image: none;
+    background-color: #F0B23A;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
